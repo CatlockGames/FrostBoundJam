@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/doors/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/WheelDoor.gd" type="Script" id=2]
+[ext_resource path="res://images/wheelDoor.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 12 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19, 21 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 1 )
+
+[sub_resource type="Animation" id=5]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 33 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Highlight:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 34 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 4.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 32 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+length = 4.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 35, 67 ]
+}
+
+[node name="WheelDoor" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 2, 1 )
+scale = Vector2( 1, 1.77146 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+vframes = 10
+hframes = 7
+frame = 33
+_sections_unfolded = [ "Animation" ]
+
+[node name="Highlight" parent="." index="2"]
+
+visible = false
+texture = ExtResource( 3 )
+vframes = 10
+hframes = 7
+frame = 34
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 2, 1 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" parent="TopTrigger" index="0"]
+
+position = Vector2( 2, -19 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" parent="BottomTrigger" index="0"]
+
+position = Vector2( 2, 21 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TopStart" parent="." index="6"]
+
+position = Vector2( 3, -28 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TopEnd" parent="." index="7"]
+
+position = Vector2( -2, 58 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomStart" parent="." index="8"]
+
+position = Vector2( 3, 30 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomEnd" parent="." index="9"]
+
+position = Vector2( -2, -56 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" parent="." index="12"]
+
+autoplay = "idle"
+anims/idle = SubResource( 5 )
+anims/openBottom = SubResource( 6 )
+anims/openTop = SubResource( 7 )
+
+

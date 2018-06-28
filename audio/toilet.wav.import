@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/toilet.wav-cbcbb3b0e1ff870fcd729e21f6c0f5b3.sample"
+
+[deps]
+
+source_file="res://audio/toilet.wav"
+source_md5="de71a02a8cd740479d896d514dec91ae"
+
+dest_files=[ "res://.import/toilet.wav-cbcbb3b0e1ff870fcd729e21f6c0f5b3.sample" ]
+dest_md5="036226be9d3a0aa1233af2b7a2440312"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

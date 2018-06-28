@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/WoodPlank.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="WoodPlank" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+
+[node name="Highlight" parent="." index="2"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+

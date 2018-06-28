@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/buildings/Barracks.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/buildings/Cabin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/buildings/ControlRoom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/buildings/GeneratorRoom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/buildings/GuardPost.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Stump.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://audio/ambient.ogg" type="AudioStream" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 477.773 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 641.575, 10 )
+
+[node name="Level" type="Node2D"]
+
+[node name="Buildings" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="Barracks" parent="Buildings" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1.85059, 114.738 )
+
+[node name="Cabin" parent="Buildings" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -269.424, -390.297 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ControlRoom" parent="Buildings" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -431.838, 121.134 )
+
+[node name="GeneratorRoom" parent="Buildings" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 516.265, -2.33173 )
+
+[node name="GuardPost" parent="Buildings" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 176.613, -274.723 )
+
+[node name="Foliage" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="Tree" parent="Foliage" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -88.3971, -197.666 )
+
+[node name="Tree2" parent="Foliage" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -387.965, -88.3971 )
+
+[node name="Tree3" parent="Foliage" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -201.349, 101.902 )
+
+[node name="Stump" parent="Foliage" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 94.5358, -132.596 )
+
+[node name="Stump2" parent="Foliage" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( -153.467, -87.1694 )
+
+[node name="Tree4" parent="Foliage" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( -260.28, -121.546 )
+
+[node name="Tree5" parent="Foliage" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( -3.68317, -337.628 )
+
+[node name="Stump3" parent="Foliage" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -251.686, -1.22772 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( -606.46, -127.904 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+
+position = Vector2( 38.8179, 347.056 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+
+position = Vector2( 37.5151, -598.936 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="3"]
+
+position = Vector2( 682.31, -123.382 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 17.444, 116.096 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Ambient"
+
+

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sink.wav-5ce7340d51b0329c5dea714d2229c54a.sample"
+
+[deps]
+
+source_file="res://audio/sink.wav"
+source_md5="da077c5cb0b79db09de229e872deb6e6"
+
+dest_files=[ "res://.import/sink.wav-5ce7340d51b0329c5dea714d2229c54a.sample" ]
+dest_md5="47251a0bfcb952742ce9fe01eff385e6"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
